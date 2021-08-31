@@ -39,7 +39,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    '@nuxtjs/style-resources',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -50,5 +51,9 @@ export default {
     google: {
       families: ['Rubik:400,700']
     },
+  },
+
+  styleResources: {
+    scss: ['./assets/styles/variables.scss'],
   },
 }
