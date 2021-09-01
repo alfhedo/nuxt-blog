@@ -11,11 +11,15 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
+    "@nuxtjs/color-mode": "^2.1.1",
+    "@nuxtjs/i18n": "^7.0.3",
+    "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
+    "nuxt-i18n": "^6.28.1",
     "nuxt-webfontloader": "^1.1.0",
     "reset-css": "^5.0.1"
   },

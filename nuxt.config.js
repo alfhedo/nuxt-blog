@@ -34,7 +34,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxtjs/stylelint-module',
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    '@nuxtjs/color-mode'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -42,7 +43,9 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     'nuxt-webfontloader',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/markdownit',
+    '@nuxtjs/i18n',
   ],
 
   styleResources: {
@@ -57,5 +60,14 @@ export default {
     google: {
       families: ['Rubik:400,700']
     },
-  }
+  },
+  i18n: {
+    lazy: true,
+    locales: [
+      { code: 'en', iso: 'en-US', file: 'en.js'},
+      { code: 'es', iso: 'es-MX', file: 'es.js'}
+    ],
+    defaultLocale: 'es',
+    langDir: '~locales/',
+  },
 }
