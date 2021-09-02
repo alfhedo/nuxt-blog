@@ -64,10 +64,10 @@ export default {
   i18n: {
     lazy: true,
     locales: [
-      { code: 'en', iso: 'en-US', file: 'en.js'},
-      { code: 'es', iso: 'es-MX', file: 'es.js'}
+      { code: 'en', iso: 'en-US', file: 'en.js', name: 'English'},
+      { code: 'es', iso: 'es-MX', file: 'es.js', name: 'Español'}
     ],
-    defaultLocale: 'es',
+    defaultLocale: 'en',
     langDir: '~locales/',
   },
 }

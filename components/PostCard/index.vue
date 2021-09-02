@@ -1,9 +1,14 @@
 <template lang="pug">
-nuxt-link.pc(:to="pageUrl")
-  img.pc__img( :src="getDynamicFile(post.img)" :alt="`post-image-${post.id}`")
+//- nuxt-link.pc(:to="pageUrl")
+//-   img.pc__img( :src="getDynamicFile(post.img)" :alt="`post-image-${post.id}`")
 
-  p.pc__title(class="body1 medium") {{ post.title }}
-  p.pc__subtitle(class="body3 regular") {{ post.desc }}
+//-   p.pc__title(class="body1 medium") {{ post.title }}
+//-   p.pc__subtitle(class="body3 regular") {{ post.desc }}
+b-card.pc(:title="post.title", :img-src="getDynamicFile(post.img)",
+      :img-alt="`post-image-${post.id}`", img-top, tag="div",
+       class="mb-2")
+  b-card-text {{post.desc}}    
+  b-button(:href="pageUrl", variant="primary") Go somewhere                   
 </template>
 
 <script lang="ts">
@@ -30,8 +35,9 @@ export default Vue.extend({
   color: $text-primary;
   border: $line-default;
   border-radius: $border-radius-primary;
+  background-color: $background-color;
   
-  padding: 24px;
+  padding: 20px;
   display: block;
   @media (max-width: $mobile) {
     &:not(:nth-last-child(1)) {
@@ -41,8 +47,9 @@ export default Vue.extend({
   @media (min-width: $tablet) {
     padding: 32px;
   }
-  &:hover {
-    background-color: $background-color;
+  &:hover {    
+    border: $line-default;
+    // text-decoration: underline $text-primary;  
   }
   &__img {
     max-width: 100%;

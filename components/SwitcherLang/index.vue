@@ -8,7 +8,7 @@ select(
     v-for="locale in $i18n.locales"
     :key="locale.code"
     :value="locale.code"
-  ) {{ locale.code }}
+  ) {{ locale.name }}
 </template>
 
 <script lang="ts">
@@ -33,11 +33,13 @@ export default Vue.extend({
 <style lang="scss" scoped>
 select {
   transition: $transition-default;
+  color: $text-primary;
   border-radius: 8px;
   border: none;
   outline: none;
-  padding: 12px 20px;
+  padding: 10px 10px;
   margin-right: 12px;
+  margin-left: 12px;
   cursor: pointer;
   background-color: $background-color;
   appearance: none;

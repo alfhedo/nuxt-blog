@@ -21,9 +21,9 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .footer {
-  margin: $section-indent-mobile 0;  
+  margin: $section-indent-mobile 0 0 0;  
   @media (min-width: $tablet) {
-    margin: $section-indent-desktop 0;
+    margin: $section-indent-desktop 0 0 0;
   }
   &__copyright {
     margin-top: 16px;

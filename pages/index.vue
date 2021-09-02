@@ -5,7 +5,7 @@
     :subtitle="$t('home.subtitle')"
   )
 
-  app-options
+  //- app-options
 
   post-list
 </template>

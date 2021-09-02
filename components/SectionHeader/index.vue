@@ -1,9 +1,20 @@
 <template lang="pug">
-section.section
-  .content
-    h1.sh__title(class="h1") {{ title }}
+div
+  b-navbar(toggleable="lg", type="dark", variant="info")
+    b-navbar-brand(href="#") {{ title }}
+    b-navbar-toggle(target="nav-collapse")
+    b-collapse(id="nav-collapse", is-nav)
+      b-navbar-nav(href="#") {{ subtitle }}
+      b-navbar-nav(text="Lang", right)
+        switcher-lang
+      b-navbar-nav(text="Theme", right)
+        switcher-color-mode        
 
-    p.sh__subtitle(v-if="subtitle" class="body2 regular") {{ subtitle }}
+//- section.section
+//-   .content
+//-     h1.sh__title(class="h1") {{ title }}
+
+//-     p.sh__subtitle(v-if="subtitle" class="body2 regular") {{ subtitle }}
 </template>
 
 <script lang="ts">

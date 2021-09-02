@@ -29,7 +29,7 @@ button {
   border-radius: 8px;
   border: none;
   outline: none;
-  padding: 12px 20px;
+  //padding: 12px 20px;
   cursor: pointer;
   background-color: $background-color;
   &:hover,

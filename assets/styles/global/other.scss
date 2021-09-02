@@ -5,15 +5,7 @@ html {
   transition: $transition-default;
 
   &,
-  body {
-    .page {
-      margin-top: $section-indent-mobile;      
-
-      @media (min-width: $tablet) {
-        margin-top: $section-indent-desktop;
-      }
-    }
-
+  body {  
     .section {
       position: relative;
       padding: 0 $section-side-padding;
