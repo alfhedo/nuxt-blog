@@ -1,9 +1,6 @@
 <template lang="pug">
 button(@click="changeColorMode")
-  img(
-    alt="theme-icon"
-    :src="getDynamicFile(icon)"
-  )
+  img(alt="theme-icon" :src="getDynamicFile(icon)")
 </template>
 
 <script lang="ts">

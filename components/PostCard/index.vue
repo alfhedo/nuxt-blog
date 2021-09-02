@@ -1,9 +1,6 @@
 <template lang="pug">
 nuxt-link.pc(:to="pageUrl")
-  img.pc__img(
-    :src="getDynamicFile(post.img)"
-    :alt="`post-image-${post.id}`"
-  )
+  img.pc__img( :src="getDynamicFile(post.img)" :alt="`post-image-${post.id}`")
 
   p.pc__title(class="body1 medium") {{ post.title }}
   p.pc__subtitle(class="body3 regular") {{ post.desc }}
@@ -33,6 +30,7 @@ export default Vue.extend({
   color: $text-primary;
   border: $line-default;
   border-radius: $border-radius-primary;
+  
   padding: 24px;
   display: block;
   @media (max-width: $mobile) {

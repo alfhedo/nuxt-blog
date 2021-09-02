@@ -1,14 +1,9 @@
 <template lang="pug">
 section.section
   .content
-    h1.sh__title(
-      class="h1"
-    ) {{ title }}
+    h1.sh__title(class="h1") {{ title }}
 
-    p.sh__subtitle(
-      v-if="subtitle"
-      class="body2 regular"
-    ) {{ subtitle }}
+    p.sh__subtitle(v-if="subtitle" class="body2 regular") {{ subtitle }}
 </template>
 
 <script lang="ts">

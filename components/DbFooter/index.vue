@@ -2,12 +2,8 @@
 section.section
   .content
     .footer
-      a.secondary(
-        href="mailto:example@mail.com?subject=Nuxt blog"
-      ) {{ $t('footer.feedback') }}
-      p.footer__copyright(
-        class="body3 regular"
-      ) {{ copyright }}
+      a.secondary(href="mailto:example@mail.com?subject=Nuxt blog") {{ $t('footer.feedback') }}
+      p.footer__copyright(class="body3 regular") {{ copyright }}
 </template>
 
 <script lang="ts">
@@ -25,7 +21,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .footer {
-  margin: $section-indent-mobile 0;
+  margin: $section-indent-mobile 0;  
   @media (min-width: $tablet) {
     margin: $section-indent-desktop 0;
   }

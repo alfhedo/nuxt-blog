@@ -16,7 +16,7 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'SwitcherLang',
   data: () => ({
-    selected: '' as 'en' | 'es',
+    selected: '' as 'es' | 'en',
   }),
   created() {
     this.selected = (this as any).$i18n.locale
