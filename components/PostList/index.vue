@@ -2,10 +2,7 @@
 section.section
   .content
     p.pl__count(class="body2 regular")
-      img.pl__count-icon(
-        src="~/assets/icons/list.svg"
-        alt="icon-list"
-      )
+      b-icon(icon="list-ul", font-scale="2")
       | {{ $t('home.postCount') + posts.length }}
 
     .pl__items

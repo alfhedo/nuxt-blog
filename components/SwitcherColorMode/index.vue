@@ -1,6 +1,7 @@
 <template lang="pug">
-button(@click="changeColorMode")
-  img(alt="theme-icon" :src="getDynamicFile(icon)")
+button(@click="changeColorMode")  
+  b-icon(:icon="icon", font-scale="2")
+
 </template>
 
 <script lang="ts">
@@ -10,13 +11,13 @@ export default Vue.extend({
   computed: {
     icon() {
       return (this as any).$colorMode.value === 'light'
-        ? 'assets/icons/sun.svg'
-        : 'assets/icons/moon.svg'
+        ? 'sun'
+        : 'moon'
     },
   },
   methods: {
     changeColorMode() {
-      ;(this as any).$colorMode.preference =
+      (this as any).$colorMode.preference =
         (this as any).$colorMode.value === 'light' ? 'dark' : 'light'
     },
   },

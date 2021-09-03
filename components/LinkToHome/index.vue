@@ -5,10 +5,7 @@ section.section
       class="primary"
       :to="localePath('/')"
     )
-      img.lth__link-icon(
-        src="~/assets/icons/home.svg"
-        alt="icon-home"
-      )
+      b-icon(icon="house-door", font-scale="3")
       | {{ $t('post.linkHome') }}
 </template>
 

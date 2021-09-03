@@ -1,9 +1,4 @@
 <template lang="pug">
-//- nuxt-link.pc(:to="pageUrl")
-//-   img.pc__img( :src="getDynamicFile(post.img)" :alt="`post-image-${post.id}`")
-
-//-   p.pc__title(class="body1 medium") {{ post.title }}
-//-   p.pc__subtitle(class="body3 regular") {{ post.desc }}
 b-card.pc(:title="post.title", :img-src="getDynamicFile(post.img)",
       :img-alt="`post-image-${post.id}`", img-top, tag="div",
        class="mb-2")

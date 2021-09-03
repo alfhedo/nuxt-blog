@@ -70,4 +70,7 @@ export default {
     defaultLocale: 'en',
     langDir: '~locales/',
   },
+  bootstrapVue: {
+    icons: true
+  }
 }
