@@ -46,6 +46,7 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/markdownit',
     '@nuxtjs/i18n',
+    '@nuxtjs/axios',
   ],
 
   styleResources: {
@@ -72,5 +73,8 @@ export default {
   },
   bootstrapVue: {
     icons: true
+  },
+  axios: {
+    // proxy: true
   }
 }
