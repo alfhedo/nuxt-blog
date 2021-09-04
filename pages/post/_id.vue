@@ -1,10 +1,12 @@
 <template lang="pug">
 .page
-  link-to-home
-
+  SideNav
+  
   section-header(
     :title="currentPost.title"
   )
+
+  link-to-home
 
   post-full(
     :post="currentPost"
