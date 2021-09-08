@@ -7,25 +7,44 @@ section.section
 
     .pl__items
       post-card(
-        v-for="post in posts"
-        :key="post.id"
-        :post="post"
+        v-for="m in records"
+        :key="m.slug"
+        :mountain="m"
       )
+  //- div
+  //-   h1 Mountains
+  //-   ul(v-for="m in records" :key="m.slug")
+  //-     li {{m.title}}
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import posts from '~/content/posts'
 import { Post } from '~/content/Post'
+// import axios from 'axios'
 export default Vue.extend({
   name: 'PostList',
-
+  data() {
+    return {
+      records: [],
+    }
+  },
+  created(){
+    this.$axios.$get('https://api.nuxtjs.dev/mountains').then(response =>{
+      this.records = response;      
+    });
+  },
+  // async asyncData({ $axios }) {
+  //   let response = await $axios.$get("https://api.nuxtjs.dev/mountains");
+  //   console.log(response);
+  //   return response;
+  // },
   computed: {
     posts(): Post[] {
       const { locale } = (this as any).$i18n
       return posts[locale as 'en' | 'es']
-    },
-  },
+    },    
+  },   
 })
 </script>
 
