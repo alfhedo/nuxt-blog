@@ -3,7 +3,7 @@ section.section
   .content
     p.pl__count(class="body2 regular")
       b-icon(icon="list-ul", font-scale="2")
-      | {{ $t('home.postCount') + posts.length }}
+      | {{ $t('home.postCount') + records.length }}
 
     .pl__items
       post-card(
@@ -19,8 +19,6 @@ section.section
 
 <script lang="ts">
 import Vue from 'vue'
-import posts from '~/content/posts'
-import { Post } from '~/content/Post'
 // import axios from 'axios'
 export default Vue.extend({
   name: 'PostList',
@@ -38,13 +36,7 @@ export default Vue.extend({
   //   let response = await $axios.$get("https://api.nuxtjs.dev/mountains");
   //   console.log(response);
   //   return response;
-  // },
-  computed: {
-    posts(): Post[] {
-      const { locale } = (this as any).$i18n
-      return posts[locale as 'en' | 'es']
-    },    
-  },   
+  // },  
 })
 </script>
 
