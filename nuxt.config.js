@@ -74,6 +74,7 @@ export default {
   bootstrapVue: {
     icons: true
   },
-	axios: {  
-	},
+  axios: {
+    baseURL: 'https://api.nuxtjs.dev'
+  }
 }

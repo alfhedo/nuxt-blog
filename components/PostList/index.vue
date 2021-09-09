@@ -19,24 +19,20 @@ section.section
 
 <script lang="ts">
 import Vue from 'vue'
-// import axios from 'axios'
+import { Post } from '~/content/Post'
+
 export default Vue.extend({
   name: 'PostList',
+
   data() {
-    return {
-      records: [],
-    }
+    return { posts: [] };
   },
-  created(){
-    this.$axios.$get('https://api.nuxtjs.dev/mountains').then(response =>{
-      this.records = response;      
+
+  created() {
+    this.$axios.$get('/posts').then(rsp => {
+      this.posts = rsp;
     });
   },
-  // async asyncData({ $axios }) {
-  //   let response = await $axios.$get("https://api.nuxtjs.dev/mountains");
-  //   console.log(response);
-  //   return response;
-  // },  
 })
 </script>
 

@@ -1,15 +1,15 @@
 <template lang="pug">
-b-card.pc(:title="mountain.title", :img-src="mountain.image",
-      :img-alt="`post-image-${mountain.slug}`", img-top, tag="div",
+b-card.pc(:title="post.title", :img-src="post.image",
+      :img-alt="`post-image-${post.id}`", img-top, tag="div",
        class="mb-2")
-  b-card-text {{mountain.description}}    
+  b-card-text {{post.description}}
   b-button(:href="pageUrl", variant="primary") Go somewhere                   
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { Post } from '~/content/Post'
-import { Mountain } from '~/content/Mountains'
+
 export default Vue.extend({
   name: 'PostCard',
   props: {

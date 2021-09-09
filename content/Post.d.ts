@@ -1,7 +1,10 @@
 export type Post = {
   id: number,
+  slug: string,
   title: string,
-  desc: string,
-  file: string,
-  img: string,
+  description: string,
+  height: string,
+  countries: string[],
+  continent: string,
+  image: string,
 };
