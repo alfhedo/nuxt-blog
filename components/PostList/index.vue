@@ -15,16 +15,19 @@ section.section
 
 <script lang="ts">
 import Vue from 'vue'
-import posts from '~/content/posts'
 import { Post } from '~/content/Post'
+
 export default Vue.extend({
   name: 'PostList',
 
-  computed: {
-    posts(): Post[] {
-      const { locale } = (this as any).$i18n
-      return posts[locale as 'en' | 'es']
-    },
+  data() {
+    return { posts: [] };
+  },
+
+  created() {
+    this.$axios.$get('/posts').then(rsp => {
+      this.posts = rsp;
+    });
   },
 })
 </script>

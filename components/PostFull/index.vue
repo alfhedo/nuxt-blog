@@ -2,16 +2,15 @@
 section.section
   .content
     img.pf__image(
-      :src="getDynamicFile(post.img)"
+      :src="post.image"
       :alt="`post-image-${post.id}`"
     )
-
-    .pf__md(v-html="getDynamicFile(post.file).default")
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { Post } from '~/content/Post'
+
 export default Vue.extend({
   name: 'PostFull',
   props: {

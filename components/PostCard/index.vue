@@ -1,14 +1,15 @@
 <template lang="pug">
-b-card.pc(:title="post.title", :img-src="getDynamicFile(post.img)",
+b-card.pc(:title="post.title", :img-src="post.image",
       :img-alt="`post-image-${post.id}`", img-top, tag="div",
        class="mb-2")
-  b-card-text {{post.desc}}    
+  b-card-text {{post.description}}
   b-button(:href="pageUrl", variant="primary") Go somewhere                   
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { Post } from '~/content/Post'
+
 export default Vue.extend({
   name: 'PostCard',
   props: {

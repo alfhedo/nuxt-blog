@@ -75,6 +75,6 @@ export default {
     icons: true
   },
   axios: {
-    // proxy: true
+    baseURL: 'https://api.nuxtjs.dev'
   }
 }
