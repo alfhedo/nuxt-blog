@@ -18,19 +18,15 @@ import Vue from 'vue'
 import { Post } from '~/content/Post'
 
 export default Vue.extend({
-  data() {
-    return { post: {} };
-  },
-
   created() {
-    this.$axios.$get(`/posts/${this.currentId}`).then(rsp => {
-      this.post = rsp;
-    });
+    this.$store.dispatch('posts/index');
   },
 
   computed: {
-    currentId(): number {
-      return Number(this.$route.params.id)
+    post() {
+      let posts = this.$store.state.posts.posts;
+      let route = this.$route.params.id;
+      return posts[route] || {};
     },
   },
 })
