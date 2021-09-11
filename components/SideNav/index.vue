@@ -1,7 +1,7 @@
 <template lang="pug">
 b-sidebar(id="sidebar-1", title="Sidebar", shadow)
   div
-    p Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+    AppOptions(class="d-md-none d-lg-block d-lg-none d-xl-block d-xl-none")
       
 </template>
 

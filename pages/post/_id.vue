@@ -1,35 +1,32 @@
 <template lang="pug">
 .page
   SideNav
-  
   section-header(
-    :title="currentPost.title"
+    :title="post.title"
   )
+  link-to-home
 
   link-to-home
 
   post-full(
-    :post="currentPost"
+    :post="post"
   )
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { Post } from '~/content/Post'
-import posts from '~/content/posts'
+
 export default Vue.extend({
-  validate({ params }) {
-    return /^\d+$/.test(params.id)
+  created() {
+    this.$store.dispatch('posts/index');
   },
+
   computed: {
-    currentId(): number {
-      return Number(this.$route.params.id)
-    },
-    currentPost(): Post | undefined {
-      const { locale } = (this as any).$i18n
-      return posts[locale as 'en' | 'es'].find(
-        (post: Post) => post.id === this.currentId
-      )
+    post(): Post | undefined {
+      let posts = this.$store.state.posts.posts;
+      let route = Number(this.$route.params.id); 
+      return posts[route - 1] || {};
     },
   },
 })

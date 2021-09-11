@@ -11,32 +11,25 @@ section.section
         :key="m.slug"
         :mountain="m"
       )
-  //- div
-  //-   h1 Mountains
-  //-   ul(v-for="m in records" :key="m.slug")
-  //-     li {{m.title}}
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-// import axios from 'axios'
+
+import { Post } from '~/content/Post'
+
 export default Vue.extend({
   name: 'PostList',
-  data() {
-    return {
-      records: [],
-    }
+
+  created() {
+    this.$store.dispatch('posts/index');
   },
-  created(){
-    this.$axios.$get('https://api.nuxtjs.dev/mountains').then(response =>{
-      this.records = response;      
-    });
+
+  computed: {
+    posts() {
+      return this.$store.state.posts.posts || [];
+    },
   },
-  // async asyncData({ $axios }) {
-  //   let response = await $axios.$get("https://api.nuxtjs.dev/mountains");
-  //   console.log(response);
-  //   return response;
-  // },  
 })
 </script>
 

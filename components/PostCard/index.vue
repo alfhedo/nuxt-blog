@@ -1,15 +1,18 @@
 <template lang="pug">
-b-card.pc(:title="mountain.title", :img-src="mountain.image",
-      :img-alt="`post-image-${mountain.slug}`", img-top, tag="div",
-       class="mb-2")
-  b-card-text {{mountain.description}}    
-  b-button(:href="pageUrl", variant="primary") Go somewhere                   
+b-card.pc(tag="div",
+       class="mb-2",
+       no-body, :title="post.title", :img-src="post.image", v-lazy-load,
+      :img-alt="`post-image-${post.id}`", img-top, )
+  b-card-text {{post.description}}
+  nuxt-link(:to="pageUrl")
+    b-button(variant="primary") Go somewhere
+
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { Post } from '~/content/Post'
-import { Mountain } from '~/content/Mountains'
+
 export default Vue.extend({
   name: 'PostCard',
   props: {

@@ -1,14 +1,14 @@
 <template lang="pug">
 div
-  b-navbar(toggleable="lg", type="dark", variant="info")        
+  b-navbar(type="dark", variant="info")
     b-icon(icon="list", v-b-toggle.sidebar-1, font-scale="2")
     b-navbar-brand(href="#") {{ title }}      
     b-navbar-toggle(target="nav-collapse")
     b-collapse(id="nav-collapse", is-nav)
       b-navbar-nav(href="#") {{ subtitle }}
-      b-navbar-nav(text="Lang", right)
+      b-navbar-nav(text="Lang", right, class="d-none d-md-block")
         switcher-lang
-      b-navbar-nav(text="Theme", right)
+      b-navbar-nav(text="Theme", right, class="d-none d-md-block")
         switcher-color-mode        
 
 //- section.section

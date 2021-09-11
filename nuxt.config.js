@@ -23,9 +23,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '~plugins/mixins/getDynamicFile.ts',    
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -47,6 +45,9 @@ export default {
     '@nuxtjs/markdownit',
     '@nuxtjs/i18n',
     '@nuxtjs/axios',
+    ['nuxt-lazy-load',{
+      images: true,
+    }]
   ],
 
   styleResources: {
@@ -74,6 +75,8 @@ export default {
   bootstrapVue: {
     icons: true
   },
-	axios: {  
-	},
+  axios: {
+    baseURL: 'https://api.nuxtjs.dev'
+  },
+  loading: '~/components/loading.vue'
 }

@@ -1,17 +1,21 @@
 <template lang="pug">
 section.section
   .content
-    img.pf__image(
-      :src="getDynamicFile(post.img)"
-      :alt="`post-image-${post.id}`"
+    b-img-lazy.pf__image(
+      :src="post.image"
+      :alt="`post-image-${post.id}`",
     )
-
-    .pf__md(v-html="getDynamicFile(post.file).default")
+    p {{ post.description }}
+    br
+    h1 {{post.continent}}
+    
+    li(v-for="c in post.countries") {{c}}
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { Post } from '~/content/Post'
+
 export default Vue.extend({
   name: 'PostFull',
   props: {
