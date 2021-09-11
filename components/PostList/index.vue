@@ -3,18 +3,19 @@ section.section
   .content
     p.pl__count(class="body2 regular")
       b-icon(icon="list-ul", font-scale="2")
-      | {{ $t('home.postCount') + posts.length }}
+      | {{ $t('home.postCount') + records.length }}
 
     .pl__items
       post-card(
-        v-for="post in posts"
-        :key="post.id"
-        :post="post"
+        v-for="m in records"
+        :key="m.slug"
+        :mountain="m"
       )
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+
 import { Post } from '~/content/Post'
 
 export default Vue.extend({

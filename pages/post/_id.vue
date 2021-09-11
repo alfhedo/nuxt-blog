@@ -6,6 +6,8 @@
   )
   link-to-home
 
+  link-to-home
+
   post-full(
     :post="post"
   )
