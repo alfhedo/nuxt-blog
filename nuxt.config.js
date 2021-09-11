@@ -45,6 +45,9 @@ export default {
     '@nuxtjs/markdownit',
     '@nuxtjs/i18n',
     '@nuxtjs/axios',
+    ['nuxt-lazy-load',{
+      images: true,
+    }]
   ],
 
   styleResources: {
@@ -74,5 +77,6 @@ export default {
   },
   axios: {
     baseURL: 'https://api.nuxtjs.dev'
-  }
+  },
+  loading: '~/components/loading.vue'
 }

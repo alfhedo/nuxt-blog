@@ -1,10 +1,15 @@
 <template lang="pug">
 section.section
   .content
-    img.pf__image(
+    b-img-lazy.pf__image(
       :src="post.image"
-      :alt="`post-image-${post.id}`"
+      :alt="`post-image-${post.id}`",
     )
+    p {{ post.description }}
+    br
+    h1 {{post.continent}}
+    
+    li(v-for="c in post.countries") {{c}}
 </template>
 
 <script lang="ts">

@@ -1,7 +1,6 @@
 <template lang="pug">
 .page
   SideNav
-
   section-header(
     :title="$t('home.title')"
     :subtitle="$t('home.subtitle')"

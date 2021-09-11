@@ -1,10 +1,10 @@
 <template lang="pug">
 .page
-  link-to-home
-
+  SideNav
   section-header(
     :title="post.title"
   )
+  link-to-home
 
   post-full(
     :post="post"
@@ -21,10 +21,10 @@ export default Vue.extend({
   },
 
   computed: {
-    post() {
+    post(): Post | undefined {
       let posts = this.$store.state.posts.posts;
-      let route = this.$route.params.id;
-      return posts[route] || {};
+      let route = Number(this.$route.params.id); 
+      return posts[route - 1] || {};
     },
   },
 })

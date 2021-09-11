@@ -1,7 +1,8 @@
 <template lang="pug">
-b-card.pc(:title="post.title", :img-src="post.image",
-      :img-alt="`post-image-${post.id}`", img-top, tag="div",
-       class="mb-2")
+b-card.pc(tag="div",
+       class="mb-2",
+       no-body, :title="post.title", :img-src="post.image", v-lazy-load,
+      :img-alt="`post-image-${post.id}`", img-top, )
   b-card-text {{post.description}}
   nuxt-link(:to="pageUrl")
     b-button(variant="primary") Go somewhere
