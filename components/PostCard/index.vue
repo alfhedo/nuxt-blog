@@ -3,7 +3,8 @@ b-card.pc(:title="post.title", :img-src="post.image",
       :img-alt="`post-image-${post.id}`", img-top, tag="div",
        class="mb-2")
   b-card-text {{post.description}}
-  b-button(:href="pageUrl", variant="primary") Go somewhere                   
+  nuxt-link(:to="pageUrl")
+    b-button(variant="primary") Go somewhere
 </template>
 
 <script lang="ts">

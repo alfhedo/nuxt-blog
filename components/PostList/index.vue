@@ -20,14 +20,14 @@ import { Post } from '~/content/Post'
 export default Vue.extend({
   name: 'PostList',
 
-  data() {
-    return { posts: [] };
+  created() {
+    this.$store.dispatch('posts/index');
   },
 
-  created() {
-    this.$axios.$get('/posts').then(rsp => {
-      this.posts = rsp;
-    });
+  computed: {
+    posts() {
+      return this.$store.state.posts.posts || [];
+    },
   },
 })
 </script>
