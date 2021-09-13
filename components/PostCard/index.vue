@@ -6,7 +6,6 @@ b-card.pc(tag="div",
   b-card-text {{post.description}}
   nuxt-link(:to="pageUrl")
     b-button(variant="primary") Go somewhere
-
 </template>
 
 <script lang="ts">
@@ -16,14 +15,15 @@ import { Post } from '~/content/Post'
 export default Vue.extend({
   name: 'PostCard',
   props: {
-    mountain: {
-      type: Object as () => Mountain,
+    post: {
+      type: Object as () => Post,
       required: true,
     },
   },
+
   computed: {
     pageUrl(): string {
-      return (this as any).localePath(`/post/${this.mountain.slug}`)
+      return (this as any).localePath(`/post/${this.post.id}`)
     },
   },
 })

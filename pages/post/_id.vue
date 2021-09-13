@@ -26,7 +26,7 @@ export default Vue.extend({
     post(): Post | undefined {
       let posts = this.$store.state.posts.posts;
       let route = Number(this.$route.params.id); 
-      return posts[route - 1] || {};
+      return posts.find(p => p.id == route) || {};
     },
   },
 })

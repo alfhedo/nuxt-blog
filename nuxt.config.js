@@ -78,5 +78,6 @@ export default {
   axios: {
     baseURL: 'https://api.nuxtjs.dev'
   },
-  loading: '~/components/loading.vue'
+
+  loading: '~/components/loading.vue',
 }
