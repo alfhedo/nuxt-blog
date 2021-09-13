@@ -23,11 +23,11 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .splash-screen {
-   background: #f2f0ee;
-    width: 100vw;
-    height: 100vh;
+  background-color: $background-color;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   z-index: 50;    
 }
@@ -43,7 +43,7 @@
   width: 80px;
   height: 80px;
   margin: 100px auto;
-  background-color: #e45447;
+  background-color: $text-primary;
 
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1s infinite ease-in-out;
