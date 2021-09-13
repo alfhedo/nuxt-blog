@@ -4,6 +4,8 @@ section.section
     b-img-lazy.pf__image(
       :src="post.image"
       :alt="`post-image-${post.id}`",
+      blank-src=null
+      show=true
     )
     p {{ post.description }}
     br
