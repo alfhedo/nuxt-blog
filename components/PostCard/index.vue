@@ -31,8 +31,12 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .btn-petsa {  
+  background-color: #D8232F;
+  color: #fff;
+  font-weight: bold;
   /* top-left | top-right | bottom-right | bottom-left */
   border-radius: 0 0 20px 20px;
+  border: 2px solid #000;
 }
 
 .pc {
