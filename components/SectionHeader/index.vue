@@ -4,12 +4,13 @@ div
     b-icon(icon="list", v-b-toggle.sidebar-1, font-scale="2")
     b-navbar-brand(href="#") {{ title }}      
     b-navbar-toggle(target="nav-collapse")
-    b-collapse(id="nav-collapse", is-nav)
-      b-navbar-nav(href="#") {{ subtitle }}
-      b-navbar-nav(text="Lang", right, class="d-none d-md-block")
-        switcher-lang
-      b-navbar-nav(text="Theme", right, class="d-none d-md-block")
-        switcher-color-mode        
+    AppOptions(class="d-none d-md-block")
+    //- b-collapse(id="nav-collapse", is-nav)
+    //-   b-navbar-nav(href="#") {{ subtitle }}
+    //-   b-navbar-nav(text="Lang", right, class="d-none d-md-block")
+    //-     switcher-lang
+    //-   b-navbar-nav(text="Theme", right, class="d-none d-md-block")
+    //-     switcher-color-mode        
 
 //- section.section
 //-   .content

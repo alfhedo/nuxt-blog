@@ -5,7 +5,7 @@ b-card.pc(tag="div",
       :img-alt="`post-image-${post.id}`", img-top, )
   b-card-text {{post.description}}
   nuxt-link(:to="pageUrl")
-    b-button(variant="primary") Go somewhere
+    b-button(variant="primary", class= "btn-petsa") Go somewhere
 </template>
 
 <script lang="ts">
@@ -30,6 +30,11 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.btn-petsa {  
+  /* top-left | top-right | bottom-right | bottom-left */
+  border-radius: 0 0 20px 20px;
+}
+
 .pc {
   color: $text-primary;
   border: $line-default;

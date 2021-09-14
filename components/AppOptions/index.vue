@@ -16,6 +16,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .app-options {
   display: flex;
-  margin-top: 24px;  
+  //margin-top: 24px;  
 }
 </style>

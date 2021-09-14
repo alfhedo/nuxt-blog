@@ -1,7 +1,7 @@
 <template lang="pug">
 b-sidebar(id="sidebar-1", title="Sidebar", shadow)
   div
-    AppOptions(class="d-md-none d-lg-block d-lg-none d-xl-block d-xl-none")
+    AppOptions(class="d-block d-sm-none d-none d-sm-block d-md-none")
       
 </template>
 

@@ -45,6 +45,7 @@ export default {
     '@nuxtjs/markdownit',
     '@nuxtjs/i18n',
     '@nuxtjs/axios',
+    'vue-sweetalert2/nuxt',
     ['nuxt-lazy-load',{
       images: true,
     }]
@@ -78,6 +79,9 @@ export default {
   axios: {
     baseURL: 'https://api.nuxtjs.dev'
   },
-
+  sweetalert: {
+    confirmButtonColor: '#41b882',
+    cancelButtonColor: '#ff7674'
+  },
   loading: '~/components/loading.vue',
 }
