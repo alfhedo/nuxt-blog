@@ -1,10 +1,12 @@
 <template lang="pug">
   div(v-if="loading" class="splash-screen")
     div(class="spinner-wrapper")
-      //- div(id="outer-circle")
-      //-   div(id="inner-circle")
-      div(class="lds-hourglass")
-        div(class="inner-lds-hourglass")
+      img(class="px150" src="~/assets/images/petsa (1)-min.png")
+      #divtorotate
+        svg(viewBox='0 0 500 150' preserveAspectRatio='xMinYMin meet')
+          path(d='M0,150 C200,-78 243,220 500,60 L500,150 L0,150 Z'
+          style='stroke: none; fill:#56595A;')
+        span#span1
       //- b-spinner(type="grow")
 </template>
 
@@ -14,7 +16,7 @@
       loading: true
     }),
     mounted(){
-      this.loading = false
+      this.loading = true
     }
   }
 </script>
@@ -25,44 +27,67 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 50;    
+  z-index: 50;
 }
 
 .spinner-wrapper {
-  position: absolute;
-  left: 50%;
+  // position: absolute;
+  position: fixed;
   top: 50%;
+  left: 50%;  
   transform: translate(-50%, -50%);
 }
+svg {  
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+.px150{
+  width: 150px;
+  height: 150px;  
+}
 
- #outer-circle {
-   background: #385a94;
-   border-radius: 50%;
-   height: 500px;
-   width: 500px;
-   position: relative;
-   /* 
-    Child elements with absolute positioning will be 
-    positioned relative to this div 
-   */
- }
- #inner-circle {
-   position: absolute;
-   background: $background-color;
-   border-radius: 50%;
-   height: 300px;
-   width: 300px;
-   /*
-    Put top edge and left edge in the center
-   */
-   top: 50%;
-   left: 50%;
-   margin: -150px 0px 0px -150px;
-   /* 
-    Offset the position correctly with
-    minus half of the width and minus half of the height 
-   */
- }
+.rotate1{
+  width: 150px;
+  height: 150px;  
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s;
+}
+#divtorotate {
+  width:150px;
+  height:150px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-radius:50%;
+  overflow:hidden;
+  transform:rotate(-10deg)
+}
+#divtorotate:before{    
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:absolute;
+  width:150px;
+  height:150px;
+  background:linear-gradient(to bottom,#DB272F 61%,#56595A 39%);
+  border-radius:50%;    
+}
+
+#span1{	  
+  display:block;  
+  height:52px;
+  width:52px;
+  border-radius:50%;
+  background:$background-color;
+  position:absolute;
+  top:50%;
+  left:50%;
+	transform:translate(-50%,-50%);    
+  z-index:10;
+}
 
 .lds-hourglass {
   display: inline-block;
@@ -99,6 +124,7 @@
   border: 32px solid $background-color;
   border-color: $background-color;
 }
+
 @keyframes lds-hourglass {
   0% {
     transform: rotate(0);
@@ -113,4 +139,13 @@
   }
 }
 
+@-webkit-keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}
+@keyframes spin {
+  100%{-webkit-transform: rotate(360deg);}
+}
 </style>
