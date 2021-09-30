@@ -3,9 +3,9 @@
     div(class="spinner-wrapper")
       img(class="px150" src="~/assets/images/petsa (1)-min.png")
       #divtorotate
-        svg(viewBox='0 0 500 150' preserveAspectRatio='xMinYMin meet')
-          path(d='M0,150 C200,-78 243,220 500,60 L500,150 L0,150 Z'
-          style='stroke: none; fill:#56595A;')
+        svg(viewBox='0 0 500 200' preserveAspectRatio='xMinYMin meet')
+          path(d='M0,150 C160,-40 260,240 500,45 L660,190 L0,350 Z'
+          class="svgStroke")
         span#span1
       //- b-spinner(type="grow")
 </template>
@@ -37,16 +37,6 @@
   left: 50%;  
   transform: translate(-50%, -50%);
 }
-svg {  
-  position: absolute;
-  top: 50px;
-  left: 0;
-}
-.px150{
-  width: 150px;
-  height: 150px;  
-}
-
 .rotate1{
   width: 150px;
   height: 150px;  
@@ -61,7 +51,7 @@ svg {
   justify-content:center;
   border-radius:50%;
   overflow:hidden;
-  transform:rotate(-10deg)
+  transform:rotate(-15deg)
 }
 #divtorotate:before{    
   content:'';
@@ -72,7 +62,7 @@ svg {
   display:absolute;
   width:150px;
   height:150px;
-  background:linear-gradient(to bottom,#DB272F 61%,#56595A 39%);
+  background:linear-gradient(to bottom,#DB272F 60%,#56595A 40%);
   border-radius:50%;    
 }
 
@@ -88,7 +78,20 @@ svg {
 	transform:translate(-50%,-50%);    
   z-index:10;
 }
-
+svg {  
+  position: absolute;
+  top: 48px;
+  left: 0;
+}
+.svgStroke{
+  stroke: $background-color;
+  stroke-width: 14;
+  fill:#56595A;  
+}
+.px150{
+  width: 150px;
+  height: 150px;  
+}
 .lds-hourglass {
   display: inline-block;
   position: relative;
