@@ -15,8 +15,8 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 #divtorotate {
-  width:900px;
-  height:900px;
+  width:150px;
+  height:150px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -31,16 +31,16 @@ export default Vue.extend({
   left:50%;
   transform:translate(-50%,-50%);
   display:absolute;
-  width:900px;
-  height:900px;
+  width:150px;
+  height:150px;
   background:linear-gradient(to bottom,#DB272F 60%,#56595A 40%);
   border-radius:50%;    
 }
 
 #span1{	  
   display:block;  
-  height:300px;
-  width:300px;
+  height:50px;
+  width:50px;
   border-radius:50%;
   background:$background-color;
   position:absolute;
@@ -51,7 +51,7 @@ export default Vue.extend({
 }
 svg {  
   position: absolute;
-  top: 290px;
+  top: 48px;
   left: 0;
 }
 .svg-stroke{

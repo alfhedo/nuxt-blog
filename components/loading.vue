@@ -1,7 +1,7 @@
 <template lang="pug">
   div(v-if="loading" class="splash-screen")
     div(class="spinner-wrapper")      
-      logo(class="")     
+      logo(class="rotate1")     
       //- b-spinner(type="grow")
       //- img(class="px150" src="~/assets/images/petsa (1)-min.png") 
 </template>
@@ -12,7 +12,7 @@
       loading: true
     }),
     mounted(){
-      this.loading = true
+      this.loading = false
     }
   }
 </script>
