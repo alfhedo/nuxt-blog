@@ -1,9 +1,10 @@
 <template lang="pug">
   div(v-if="loading" class="splash-screen")
-    div(class="spinner-wrapper")      
-      logo(class="rotate1")     
+    div(class="spinner-wrapper")
+      logo(class="rotate1")
       //- b-spinner(type="grow")
-      //- img(class="px150" src="~/assets/images/petsa (1)-min.png") 
+      br
+      img(class="px150 rotate1" src="~/assets/images/petsa (1)-min.png")
 </template>
 
 <script>
@@ -12,7 +13,7 @@
       loading: true
     }),
     mounted(){
-      this.loading = false
+      this.loading = true
     }
   }
 </script>
@@ -36,48 +37,14 @@
 .rotate1{
   width: 150px;
   height: 150px;  
-  -webkit-animation: spin 1s linear infinite;
-  -moz-animation: spin 1s;
+  // -webkit-animation: spin 1s linear infinite;
+  // -moz-animation: spin 1s;
+  animation: lds-hourglass 1.5s infinite;
 }
 
 .px150{
   width: 150px;
   height: 150px;  
-}
-.lds-hourglass {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-.lds-hourglass:after {
-  content: " ";
-  display: block;
-  border-radius: 50%;
-  width: 0;
-  height: 0;
-  margin: 8px;
-  box-sizing: border-box;
-  border: 32px solid #fff;
-  border-color: #D8232F transparent #57585A transparent;
-  animation: lds-hourglass 1.2s infinite;
-}
-.inner-lds-hourglass {  
-  display: inline-block;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-}
-.inner-lds-hourglass:after {
-  content: " ";
-  display: block;
-  border-radius: 50%;
-  width: 0;
-  height: 0;
-  margin: 0px;
-  box-sizing: border-box;
-  border: 32px solid $background-color;
-  border-color: $background-color;
 }
 
 @keyframes lds-hourglass {

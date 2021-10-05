@@ -10,6 +10,27 @@
 import Vue from 'vue'
 export default Vue.extend({
   name: 'logo',
+  data() {
+    return {
+      textColor: "blue"
+    };
+  },
+  props: {
+    sizeLogo: {
+      type: Number,
+      default: 150,
+    },
+  },
+  computed: {
+    cssProps() {
+      return {
+        // '--hover-font-size': (this.baseFontSize * 2) + "em",
+        // '--bg-hover-color': this.bgHoverColor,
+        // '--hover-content': JSON.stringify(this.hoverContent)
+        '--size-logo': this.sizeLogo  + "px",
+      }
+    }
+  }
 })
 </script>
 
@@ -57,6 +78,6 @@ svg {
 .svg-stroke{
   stroke: $background-color;
   stroke-width: 14;
-  fill:#56595A;  
-}  
+  fill:#56595A !important;
+}
 </style>
